@@ -1,0 +1,146 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+      * {
+
+margin: 0px;
+
+padding: 0px;
+
+box-sizing: border-box;
+
+}
+
+.body-text {
+
+display: flex;
+
+font-family: "Montserrat", sans-serif;
+
+align-items: center;
+
+justify-content: center;
+
+margin-top: 250px;
+
+}
+
+nav {
+
+display: flex;
+
+justify-content: space-around;
+
+align-items: center;
+
+min-height: 8vh;
+
+background-color: teal;
+
+font-family: "Montserrat", sans-serif;
+
+}
+
+.heading {
+
+color: white;
+
+text-transform: uppercase;
+
+letter-spacing: 5px;
+
+font-size: 20px;
+
+}
+
+.nav-links {
+
+display: flex;
+
+justify-content: space-around;
+
+width: 30%;
+
+}
+
+.nav-links li {
+
+list-style: none;
+
+}
+
+.nav-links a {
+
+color: white;
+
+text-decoration: none;
+
+letter-spacing: 3px;
+
+font-weight: bold;
+
+font-size: 14px;
+
+padding: 14px 16px;
+
+}
+
+.nav-links a:hover:not(.active) {
+
+background-color: lightseagreen;
+
+}
+
+.nav-links li a.active {
+
+background-color: #4caf50;
+
+} 
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+}
+h1, p{
+    text-align: center;
+}
+
+table{  
+            border-collapse: collapse;  
+            width: 100%;   
+        }  
+    th,td{  
+        border: 2px solid green;   
+        padding: 15px;  
+    }  
+      </style>
+  </head>
+  <body>
+    <nav>
+
+      <div class="heading">
+
+        <h4>Student Enrolment System</h4>
+
+      </div>
+
+      <ul class="nav-links">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a class="active" href="/reg">Registrations</a></li>
+
+        <li><a href="/all_stu">Registered</a></li>
+
+        <li><a href="/search_stu">Search</a></li>
+        <li><a href="/delete_stud">Delete</a></li>
+
+      </ul>
+
+    </nav>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "base.html" %}
+    <main>
+
+        
+        <form method="POST" style="padding-left: 30px;padding-top: 30px">
+            {% csrf_token %}  
+           
+                  
+            <div class="container">
+                <h1>Search Student</h1>
+                <p>Kindly fill below information.</p>
+                <br> <label for="username"><b>Name of Student</b></label>
+                <input type="text" placeholder="Enter Student Name" name="s_name" id="s_name" required value="{{s_name}}">
+                <br>
+                <label for="email"><b>Father's name</b></label>
+                <input type="text" placeholder="Enter Father's Name" name="s_fathername" id="s_fathername" required value="{{s_fathername}}"><br>
+                <label for="email"><b>Mother's Name</b></label>
+                
+                <input type="text" placeholder="Enter Mother's Name" name="s_mothername" id="s_mothername" required value="{{s_mothername}}"><br>
+               
+        
+                <button type="submit">Search</button>
+              </div>
+        
+            
+            </form>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
+

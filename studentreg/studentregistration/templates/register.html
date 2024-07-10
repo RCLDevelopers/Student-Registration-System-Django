@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "base.html" %}
+    <main>
+      {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'error' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+         {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'success' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+        
+        <form method="POST" style="padding-left: 30px;padding-top: 30px">
+            {% csrf_token %}  
+           
+                  
+            <div class="container">
+                <h1>Register</h1>
+                <p>Kindly fill in this form to register.</p>
+                <br> <label for="username"><b>Name of Student</b></label>
+                <input type="text" placeholder="Enter Student Name" name="s_name" id="s_name" required>
+                <br>
+                <label for="email"><b>Father's name</b></label>
+                <input type="text" placeholder="Enter Father's Name" name="s_fathername" id="s_fathername" required><br>
+                <label for="email"><b>Mother's Name</b></label>
+                
+                <input type="text" placeholder="Enter Mother's Name" name="s_mothername" id="s_mothername" required><br>
+                <label for="email"><b>Communications Address</b></label>
+                
+                <input type="text" placeholder="Enter Communications Address" name="s_addr" id="s_addr" required><br>
+                <label for="email"><b>Name of School</b></label>
+                
+                <input type="text" placeholder="Enter Name of School" name="s_school" id="s_school" required><br>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="s_email" id="s_email" required><br>
+            
+                <label for="email"><b>Gender</b></label>
+                <select name="s_gender" id="s_gender">
+                  <option value="">Choose Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <br>
+            
+                <label for="email"><b>Student Class</b></label>
+                
+                <input type="text" placeholder="Enter Student Class" name="s_class" id="s_class" required><br>
+              
+        
+                <button type="submit">Register</button>
+              </div>
+        
+          
+            </form>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ {% include "base.html" %}
+    <main>
+
+        <h1 style="padding-top: 20px;padding-left: 20px;">View Student Details</h1>  
+        <br>
+        {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'error' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+         {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'success' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Father's Name</th>
+                <th scope="col">Mother's Name</th>
+                <th scope="col">Communication Address</th>
+                <th scope="col">School</th>
+                <th scope="col">Email</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Student Class</th>
+                <th scope="col">Reg Date</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+    
+            {% for stud in studs %}
+            <tbody>
+              <tr>
+                <th scope="row">{{stud.id}}</th>
+                <td>{{stud.s_name}}</td>
+                <td>{{stud.s_fathername}}</td>
+                <td>{{stud.s_mothername}}</td>
+                <td>{{stud.s_addr}}</td>
+                <td>{{stud.s_school}}</td>
+                <td>{{stud.s_email}}</td>
+                <td>{{stud.s_gender}}</td>
+                <td>{{stud.s_class}}</td>
+                <td>{{stud.created_at}}</td>
+                <td><a  href="/delete_stud/{{stud.id}}">Delete</a>||<a  href="/update_student/{{stud.id}}">Update</a></td>
+                
+                
+              </tr>
+             
+            </tbody>{% endfor %}
+          </table>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>

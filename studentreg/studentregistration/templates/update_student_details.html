@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include "base.html" %}
+    <main>
+      {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'error' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+         {% if messages %}
+      {% for message in messages %}
+       {% if message.tags == 'success' %}
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+       </button>
+        </div>
+     {% endif %}
+      {% endfor %}
+     {% endif %}
+        
+        <form method="POST" style="padding-left: 30px;padding-top: 30px" action="{% url 'student_update' %}">
+            {% csrf_token %}  
+           
+                  
+            <div class="container">
+                <h1>Update Student Details</h1>
+                <p>Update the student details.</p>
+                <br> <label for="username"><b>Name of Student</b></label>
+                <input type="text" value="{{student.s_name}}" name="s_name" id="s_name" >
+                <input type="hidden" value="{{student.id}}" name="student_id" id="student_id" >
+                <br>
+                <label for="email"><b>Father's name</b></label>
+                <input type="text" value="{{student.s_fathername}}" name="s_fathername" id="s_fathername" ><br>
+                <label for="email"><b>Mother's Name</b></label>
+                
+                <input type="text" value="{{student.s_mothername}}" name="s_mothername" id="s_mothername" ><br>
+                <label for="email"><b>Communications Address</b></label>
+                
+                <input type="text" value="{{student.s_addr}}" name="s_addr" id="s_addr" ><br>
+                <label for="email"><b>Name of School</b></label>
+                
+                <input type="text" value="{{student.s_school}}" name="s_school" id="s_school" ><br>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="email" value="{{student.s_email}}" name="s_email" id="s_email" ><br>
+            
+                <label for="email"><b>Gender</b></label>
+                <select name="s_gender" id="s_gender">
+                  <option value="{{student.s_gender}}">{{student.s_gender}}</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+                <br>
+            
+                <label for="email"><b>Student Class</b></label>
+                
+                <input type="text" value="{{student.s_class}}" name="s_class" id="s_class"><br>
+              
+        
+                <button type="submit">Submit</button>
+              </div>
+        
+              
+            </form>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
+
